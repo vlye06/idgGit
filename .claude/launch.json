@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "idg-weave",
+      "runtimeExecutable": "C:\\Program Files\\dotnet\\dotnet.exe",
+      "runtimeArgs": ["serve", "--directory", "D:\\idg", "--port", "3000"],
+      "port": 3000
+    }
+  ]
+}
