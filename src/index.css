@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Brand accent — IDG-Weave's actual gear-green, standing in for the "gold" role */
+  --color-green-300: #b6e17e;
+  --color-green-400: #93d442;
+  --color-green-500: #78be20;
+  --color-green-600: #5e9a18;
+  --color-green-700: #497813;
+
+  /* Dark ground — charcoal-forest scale for hero/footer/dark sections */
+  --color-forest-950: #0a0e09;
+  --color-forest-900: #141a12;
+  --color-forest-800: #1c201c;
+  --color-forest-700: #2a302a;
+  --color-forest-600: #3c4636;
+
+  /* Light neutrals for content sections */
+  --color-paper-50: #fbfbf8;
+  --color-paper-100: #f4f5f0;
+  --color-paper-200: #e6e8e0;
+  --color-paper-300: #cdd1c4;
+
+  --color-ink: #171b14;
+  --color-ink-light: #545f4d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper-50);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background: var(--color-green-400);
+  color: var(--color-forest-950);
+}
+
+.perspective-container {
+  perspective: 1600px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.blueprint-grid {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2378BE20' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(10px); opacity: 1; }
+}
+.animate-scroll-hint {
+  animation: scroll-hint 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-hint {
+    animation: none;
+  }
+}
