@@ -29,8 +29,8 @@ export function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <a href="#top" className="flex items-center gap-3">
-          <img src="/idg_logo.png" alt="IDG-Weave" className="h-9 w-9" />
+        <a href="#top" className="flex items-center gap-4">
+          <img src="/idg_logo.png" alt="IDG-Weave" className="h-9 w-auto" />
           <span className="font-serif text-xl tracking-wide text-paper-50">
             {company.name}
           </span>

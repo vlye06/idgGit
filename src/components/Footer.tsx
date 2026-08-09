@@ -11,8 +11,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-3">
-              <img src="/idg_logo.png" alt={company.name} className="h-8 w-8" />
+            <div className="flex items-center gap-4">
+              <img src="/idg_logo.png" alt={company.name} className="h-8 w-auto" />
               <span className="font-serif text-lg text-paper-50">{company.name}</span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">{footer.tagline}</p>
