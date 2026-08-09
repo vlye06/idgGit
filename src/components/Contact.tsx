@@ -18,6 +18,34 @@ export function Contact() {
       setStatus("error");
       return;
     }
+
+    const data = new FormData(form);
+    const firstName = String(data.get("firstName") ?? "").trim();
+    const lastName = String(data.get("lastName") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+    const company = String(data.get("company") ?? "").trim();
+    const subjectId = String(data.get("subject") ?? "");
+    const message = String(data.get("message") ?? "").trim();
+    const subjectService = t.services.items.find((service) => service.id === subjectId);
+    const subjectTitle = subjectService?.title ?? subjectId;
+
+    const subjectLine = `${contact.form.subject}: ${subjectTitle} — ${firstName} ${lastName}`.trim();
+    const bodyLines = [
+      `${contact.form.firstName}: ${firstName}`,
+      `${contact.form.lastName}: ${lastName}`,
+      `${contact.form.email}: ${email}`,
+      phone && `${contact.form.phone}: ${phone}`,
+      company && `${contact.form.company}: ${company}`,
+      `${contact.form.subject}: ${subjectTitle}`,
+      "",
+      message,
+    ]
+      .filter((line): line is string => Boolean(line))
+      .join("\n");
+
+    window.location.href = `mailto:${contact.emails[0]}?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(bodyLines)}`;
+
     setStatus("success");
     form.reset();
   };
