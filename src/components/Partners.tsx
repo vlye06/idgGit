@@ -2,6 +2,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 import { Icon } from "./Icon";
+import { PartnerNetwork } from "./PartnerNetwork";
 
 export function Partners() {
   const { t } = useLanguage();
@@ -13,6 +14,12 @@ export function Partners() {
         <SectionHeading eyebrow={partners.eyebrow} heading={partners.title} subtitle={partners.subtitle} align="center" />
         <Reveal>
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-light">{partners.intro}</p>
+        </Reveal>
+
+        <Reveal delay={0.05}>
+          <div className="mt-12 rounded-3xl border border-paper-300 bg-white py-10">
+            <PartnerNetwork partners={partners.items} hubLabel={partners.eyebrow} />
+          </div>
         </Reveal>
 
         <div className="mt-14 flex flex-col gap-5">

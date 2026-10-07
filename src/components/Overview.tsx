@@ -2,6 +2,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 import { Icon } from "./Icon";
+import { WeavePattern } from "./WeavePattern";
 
 export function Overview() {
   const { t } = useLanguage();
@@ -20,6 +21,13 @@ export function Overview() {
               {overview.cta}
               <Icon name="arrow-right" className="h-3.5 w-3.5" />
             </a>
+
+            <div className="mt-10 hidden max-w-xs overflow-hidden rounded-2xl border border-paper-300 bg-forest-950 p-6 lg:block">
+              <WeavePattern className="w-full" />
+              <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-paper-200/60">
+                {overview.weaveCaption}
+              </p>
+            </div>
           </Reveal>
 
           <div className="grid gap-5 sm:grid-cols-2">
